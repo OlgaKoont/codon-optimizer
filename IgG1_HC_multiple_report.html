@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html><head>
+<title>Codon Optimization Report</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+h1 { color: #333; }
+h2 { color: #666; border-bottom: 2px solid #ccc; padding-bottom: 5px; }
+table { border-collapse: collapse; width: 100%; margin: 20px 0; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background-color: #4CAF50; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+.score { font-weight: bold; }
+.high { color: green; }
+.medium { color: orange; }
+.low { color: red; }
+</style>
+</head><body>
+<h1>Codon Optimization Report</h1>
+<p><strong>Number of Solutions:</strong> 5</p>
+<h2>Summary</h2>
+<table>
+<tr><th>Solution</th><th>Total Score</th><th>CAI</th><th>GC Score</th><th>Structure Score</th><th>CQA Score</th></tr>
+<tr>
+<td>optimized_balanced</td>
+<td class='score'>0.7963</td>
+<td>0.9000</td>
+<td>1.0000</td>
+<td>0.5000</td>
+<td>0.7500</td>
+</tr>
+<tr>
+<td>optimized_high_cai</td>
+<td class='score'>0.8001</td>
+<td>0.9000</td>
+<td>1.0000</td>
+<td>0.5000</td>
+<td>0.7500</td>
+</tr>
+<tr>
+<td>optimized_optimal_gc</td>
+<td class='score'>0.8021</td>
+<td>0.9000</td>
+<td>1.0000</td>
+<td>0.5000</td>
+<td>0.7500</td>
+</tr>
+<tr>
+<td>optimized_minimal_motifs</td>
+<td class='score'>0.8060</td>
+<td>0.9000</td>
+<td>1.0000</td>
+<td>0.5000</td>
+<td>0.7500</td>
+</tr>
+<tr>
+<td>optimized_best_codon_pairs</td>
+<td class='score'>0.8066</td>
+<td>0.8997</td>
+<td>1.0000</td>
+<td>0.5000</td>
+<td>0.7500</td>
+</tr>
+</table>
+<h2>Solution 1: optimized_balanced</h2>
+<h3>Scores</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Total Score</td><td class='score'>0.7963</td></tr>
+<tr><td>CAI Score</td><td>0.9996</td></tr>
+<tr><td>GC Score</td><td>1.0000</td></tr>
+<tr><td>Pair Score</td><td>0.5895</td></tr>
+<tr><td>Structure Score</td><td>0.5000</td></tr>
+<tr><td>Motif Score</td><td>0.7201</td></tr>
+<tr><td>Cloning Score</td><td>1.0000</td></tr>
+</table>
+<h3>CQA Predictions</h3>
+<table>
+<tr><th>Attribute</th><th>Risk Level</th><th>Details</th></tr>
+<tr>
+<td>Glycosylation</td>
+<td class='high'>low</td>
+<td>{
+  "total_glycosylation_sites": 1,
+  "atypical_sites": [],
+  "atypical_site_count": 0,
+  "risk_level": "low"
+}</td>
+</tr>
+<tr>
+<td>Aggregation</td>
+<td class='medium'>medium</td>
+<td>{
+  "hydrophobic_regions": 0,
+  "unpaired_cysteines": 11,
+  "hydrophobicity_index": 0.34966592427616927,
+  "risk_factors": [
+    "unpaired_cysteines"
+  ],
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Charge_variants</td>
+<td class='medium'>medium</td>
+<td>{
+  "positive_charged": 52,
+  "negative_charged": 38,
+  "net_charge": 14,
+  "charge_density": 0.20044543429844097,
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td class='high'>high</td>
+<td>{
+  "cai": 0.9000409580584391,
+  "predicted_expression": "high",
+  "tRNA_depletion_risk": false,
+  "max_codon_usage": 0.11804008908685969
+}</td>
+</tr>
+</table>
+<h3>Optimized Sequence</h3>
+<p><code>GAGGTGCAGCTGGTGGAAAGCGGCGGCGGCCTGGTGCAGCCAGGCGGCAGCCTGAGGCTGAGCTGCGCCGCCAGCGGCTTCACCTTCAGCAGCTATGCCATGAGCTGGGTGCGGCAGGCCCCAGGCAAGGGCCTGGAGTGGGTTAGCGCCATCAGCAGCGGCGGCGGCAGCACCTACTACGCCGACAGTGTGAAGGGGAGGTTCACCATCAGCCGCGACAACAGCAAGAACACCCTCTACCTGCAGATGAACAGCCTGAGGGCCGAGGACACCGCCGTGTACTACTGCGCTAGGGCCAGCACATACTACTACGGTATGGACTACTGGGGCCAGGGCACCCTGGTGACCGTGAGCAGCGCCAGCACCAAGGGCCCAAGCGTGTTCCCACTGGCCCCAAGCAGCAAAAGCACCTCAGGCGGCACCGCCGCCCTGGGCTGCCTGGTGAAGGACTACTTCCCAGAGCCAGTGACCGTGAGCTGGAACAGCGGCGCCCTGACCAGCGGCGTGCACACCTTCCCAGCCGTGCTGCAGAGCAGCGGCCTGTACTCGCTGAGCAGCGTGGTGACCGTGCCAAGCAGCAGCCTGGGAACCCAGACCTACATCTGCAATGTGAACCACAAGCCAAGCAACACCAAGGTGGACAAGAGGGTGGAGCCAAAAAGCTGCGACAAGACCCATACCTGCCCACCATGCCCAGCCCCAGAGCTGCTCGGCGGCCCTAGCGTGTTCCTGTTCCCTCCAAAGCCAAAGGACACCCTCATGATCAGTAGGACCCCAGAGGTGACGTGCGTGGTGGTAGACGTGAGCCACGAGGACCCAGAGGTGAAGTTTAATTGGTATGTGGACGGCGTGGAGGTGCACAACGCCAAGACCAAGCCAAGGGAAGAGCAGTACAACAGCACATATAGGGTGGTGAGCGTGCTGACCGTGCTGCACCAAGACTGGCTGAACGGCAAGGAGTACAAGTGCAAAGTGAGCAACAAGGCCCTGCCAGCCCCAATCGAGAAGACCATCAGCAAGGCCAAGGGCCAGCCGAGGGAACCACAGGTGTACACCCTGCCACCAAGCAGGGAGGAGATGACCAAAAACCAGGTGAGCCTGACCTGCTTAGTGAAGGGTTTTTACCCGAGCGACATCGCCGTGGAGTGGGAGAGCAACGGCCAACCAGAGAACAACTACAAGACAACCCCCCCAGTGCTGGACAGCGACGGTAGCTTCTTCCTGTACAGCAAGCTGACCGTGGATAAGAGCAGGTGGCAGCAGGGCAATGTGTTCAGCTGCAGCGTGATGCACGAGGCCCTGCACAACCACTACACCCAAAAGAGCCTGAGCCTGAGCCCAGGCAAG</code></p>
+<h2>Solution 2: optimized_high_cai</h2>
+<h3>Scores</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Total Score</td><td class='score'>0.8001</td></tr>
+<tr><td>CAI Score</td><td>0.9999</td></tr>
+<tr><td>GC Score</td><td>1.0000</td></tr>
+<tr><td>Pair Score</td><td>0.5952</td></tr>
+<tr><td>Structure Score</td><td>0.5000</td></tr>
+<tr><td>Motif Score</td><td>0.7386</td></tr>
+<tr><td>Cloning Score</td><td>1.0000</td></tr>
+</table>
+<h3>CQA Predictions</h3>
+<table>
+<tr><th>Attribute</th><th>Risk Level</th><th>Details</th></tr>
+<tr>
+<td>Glycosylation</td>
+<td class='high'>low</td>
+<td>{
+  "total_glycosylation_sites": 1,
+  "atypical_sites": [],
+  "atypical_site_count": 0,
+  "risk_level": "low"
+}</td>
+</tr>
+<tr>
+<td>Aggregation</td>
+<td class='medium'>medium</td>
+<td>{
+  "hydrophobic_regions": 0,
+  "unpaired_cysteines": 11,
+  "hydrophobicity_index": 0.34966592427616927,
+  "risk_factors": [
+    "unpaired_cysteines"
+  ],
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Charge_variants</td>
+<td class='medium'>medium</td>
+<td>{
+  "positive_charged": 52,
+  "negative_charged": 38,
+  "net_charge": 14,
+  "charge_density": 0.20044543429844097,
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td class='high'>high</td>
+<td>{
+  "cai": 0.8999772849531059,
+  "predicted_expression": "high",
+  "tRNA_depletion_risk": false,
+  "max_codon_usage": 0.111358574610245
+}</td>
+</tr>
+</table>
+<h3>Optimized Sequence</h3>
+<p><code>GAGGTGCAGCTGGTGGAAAGCGGCGGCGGTCTGGTGCAGCCAGGCGGCAGCCTGAGACTGAGCTGCGCCGCCTCCGGCTTCACATTTAGCAGCTACGCCATGAGCTGGGTGAGGCAGGCCCCAGGCAAGGGCCTGGAGTGGGTGAGCGCCATCAGCAGCGGGGGCGGCAGCACCTACTACGCCGACAGCGTGAAGGGAAGGTTCACCATTAGCAGGGACAACAGCAAGAACACCCTGTACCTGCAAATGAACAGCCTCAGGGCCGAGGACACCGCCGTGTACTACTGCGCCAGGGCTAGCACCTATTACTACGGCATGGATTACTGGGGCCAGGGCACCCTGGTGACCGTGAGCTCAGCCAGCACCAAGGGCCCAAGCGTGTTCCCACTGGCCCCAAGCAGCAAGAGCACCAGCGGCGGCACCGCAGCCCTGGGCTGTCTGGTGAAGGACTACTTCCCGGAGCCAGTGACCGTGAGCTGGAATAGCGGCGCCCTGACCAGCGGCGTGCACACCTTCCCAGCCGTGCTACAGTCTAGCGGCCTGTACAGCCTGAGCAGCGTGGTGACCGTGCCAAGCTCATCTCTGGGCACCCAGACGTACATTTGCAACGTGAATCACAAGCCAAGCAACACCAAGGTGGACAAGAGGGTGGAGCCAAAGAGCTGCGACAAGACCCACACCTGCCCACCATGCCCAGCCCCCGAGCTGCTGGGCGGCCCAAGCGTGTTCCTGTTCCCACCAAAGCCAAAGGACACCCTGATGATCAGCAGGACCCCAGAGGTGACCTGCGTGGTGGTGGACGTGAGCCACGAGGACCCGGAGGTGAAGTTCAACTGGTACGTGGACGGCGTGGAGGTGCACAACGCCAAGACCAAGCCAAGGGAGGAGCAGTACAACAGCACCTACCGAGTGGTGAGCGTGCTGACCGTGCTGCACCAGGACTGGCTGAATGGCAAGGAGTACAAGTGCAAAGTCAGCAACAAGGCCCTGCCAGCCCCAATTGAAAAGACTATTAGCAAGGCGAAGGGCCAGCCAAGGGAGCCACAGGTGTACACCCTGCCACCAAGCAGGGAGGAGATGACCAAGAATCAGGTGAGCCTGACCTGCCTGGTGAAGGGCTTCTACCCAAGTGACATCGCCGTCGAGTGGGAATCCAACGGCCAGCCAGAGAACAACTACAAGACCACCCCACCAGTGCTGGACAGCGACGGCAGCTTCTTCCTGTACAGCAAGCTGACCGTGGACAAAAGCAGGTGGCAGCAGGGCAATGTGTTCAGCTGCAGCGTGATGCACGAGGCCCTGCACAACCACTACACTCAAAAGAGCCTGAGCCTGAGCCCAGGCAAG</code></p>
+<h2>Solution 3: optimized_optimal_gc</h2>
+<h3>Scores</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Total Score</td><td class='score'>0.8021</td></tr>
+<tr><td>CAI Score</td><td>0.9999</td></tr>
+<tr><td>GC Score</td><td>1.0000</td></tr>
+<tr><td>Pair Score</td><td>0.5974</td></tr>
+<tr><td>Structure Score</td><td>0.5000</td></tr>
+<tr><td>Motif Score</td><td>0.7498</td></tr>
+<tr><td>Cloning Score</td><td>1.0000</td></tr>
+</table>
+<h3>CQA Predictions</h3>
+<table>
+<tr><th>Attribute</th><th>Risk Level</th><th>Details</th></tr>
+<tr>
+<td>Glycosylation</td>
+<td class='high'>low</td>
+<td>{
+  "total_glycosylation_sites": 1,
+  "atypical_sites": [],
+  "atypical_site_count": 0,
+  "risk_level": "low"
+}</td>
+</tr>
+<tr>
+<td>Aggregation</td>
+<td class='medium'>medium</td>
+<td>{
+  "hydrophobic_regions": 0,
+  "unpaired_cysteines": 11,
+  "hydrophobicity_index": 0.34966592427616927,
+  "risk_factors": [
+    "unpaired_cysteines"
+  ],
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Charge_variants</td>
+<td class='medium'>medium</td>
+<td>{
+  "positive_charged": 52,
+  "negative_charged": 38,
+  "net_charge": 14,
+  "charge_density": 0.20044543429844097,
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td class='high'>high</td>
+<td>{
+  "cai": 0.8999877620986437,
+  "predicted_expression": "high",
+  "tRNA_depletion_risk": false,
+  "max_codon_usage": 0.11581291759465479
+}</td>
+</tr>
+</table>
+<h3>Optimized Sequence</h3>
+<p><code>GAGGTGCAGCTGGTGGAGAGCGGCGGCGGCCTGGTGCAGCCGGGTGGCAGCCTGAGGCTGAGTTGCGCCGCCAGCGGCTTCACCTTCAGCAGCTACGCCATGAGCTGGGTGAGGCAGGCCCCAGGCAAGGGCCTGGAGTGGGTGAGCGCCATCAGCAGCGGCGGCGGCAGCACCTACTACGCCGACAGCGTGAAGGGCCGATTTACCATCAGCAGGGACAACAGCAAGAACACCCTGTACCTTCAGATGAACTCCTTAAGGGCCGAGGACACCGCCGTGTACTACTGCGCCAGGGCCAGCACCTACTACTACGGCATGGACTACTGGGGCCAAGGAACCCTGGTGACCGTGAGCAGCGCCAGCACTAAGGGACCAAGCGTGTTCCCACTGGCCCCAAGCAGCAAGAGCACCAGCGGCGGCACCGCCGCCCTCGGCTGCCTGGTCAAGGACTACTTCCCAGAGCCAGTGACTGTGAGCTGGAACAGCGGCGCCCTGACTAGCGGCGTACACACCTTCCCAGCCGTGCTGCAGAGCAGCGGCCTGTACAGCCTGAGCAGCGTGGTGACCGTGCCCAGCAGCAGCCTGGGCACCCAGACCTACATCTGCAATGTGAACCACAAACCAAGCAACACCAAGGTGGACAAGAGGGTGGAGCCAAAGAGCTGCGACAAGACCCACACCTGCCCACCATGCCCAGCCCCGGAGCTGCTGGGCGGCCCAAGCGTGTTCCTGTTCCCACCAAAGCCAAAAGATACCCTGATGATCAGCAGGACCCCAGAGGTGACCTGCGTGGTGGTGGACGTTTCGCACGAGGACCCAGAGGTGAAGTTCAACTGGTACGTTGACGGCGTGGAGGTGCACAACGCCAAGACCAAGCCAAGGGAGGAGCAGTACAACAGCACCTACAGAGTGGTGAGCGTGCTGACCGTGCTGCACCAGGATTGGCTGAACGGCAAGGAGTACAAGTGTAAGGTGAGCAACAAGGCCCTGCCAGCCCCAATCGAGAAGACCATCAGCAAGGCCAAGGGCCAGCCAAGGGAGCCACAGGTGTACACCCTGCCACCAAGTCGAGAGGAGATGACCAAGAACCAGGTGAGTCTGACCTGCCTGGTGAAGGGTTTCTATCCCAGCGACATCGCTGTGGAGTGGGAGAGCAACGGCCAGCCAGAGAACAACTACAAGACCACCCCACCAGTCCTGGACAGCGACGGTAGCTTCTTTCTGTACAGCAAGCTGACCGTGGATAAAAGCAGGTGGCAACAAGGCAACGTGTTCAGCTGCAGCGTGATGCACGAGGCCCTGCACAACCACTACACCCAGAAGAGCCTGAGCCTGAGCCCAGGCAAG</code></p>
+<h2>Solution 4: optimized_minimal_motifs</h2>
+<h3>Scores</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Total Score</td><td class='score'>0.8060</td></tr>
+<tr><td>CAI Score</td><td>0.9999</td></tr>
+<tr><td>GC Score</td><td>1.0000</td></tr>
+<tr><td>Pair Score</td><td>0.5977</td></tr>
+<tr><td>Structure Score</td><td>0.5000</td></tr>
+<tr><td>Motif Score</td><td>0.7758</td></tr>
+<tr><td>Cloning Score</td><td>1.0000</td></tr>
+</table>
+<h3>CQA Predictions</h3>
+<table>
+<tr><th>Attribute</th><th>Risk Level</th><th>Details</th></tr>
+<tr>
+<td>Glycosylation</td>
+<td class='high'>low</td>
+<td>{
+  "total_glycosylation_sites": 1,
+  "atypical_sites": [],
+  "atypical_site_count": 0,
+  "risk_level": "low"
+}</td>
+</tr>
+<tr>
+<td>Aggregation</td>
+<td class='medium'>medium</td>
+<td>{
+  "hydrophobic_regions": 0,
+  "unpaired_cysteines": 11,
+  "hydrophobicity_index": 0.34966592427616927,
+  "risk_factors": [
+    "unpaired_cysteines"
+  ],
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Charge_variants</td>
+<td class='medium'>medium</td>
+<td>{
+  "positive_charged": 52,
+  "negative_charged": 38,
+  "net_charge": 14,
+  "charge_density": 0.20044543429844097,
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td class='high'>high</td>
+<td>{
+  "cai": 0.8999784358706373,
+  "predicted_expression": "high",
+  "tRNA_depletion_risk": false,
+  "max_codon_usage": 0.10467706013363029
+}</td>
+</tr>
+</table>
+<h3>Optimized Sequence</h3>
+<p><code>GAAGTGCAGCTGGTGGAGTCGGGCGGAGGCCTGGTGCAGCCAGGTGGCAGCCTGAGGCTGAGCTGCGCCGCCAGCGGCTTTACCTTCAGCAGCTACGCCATGAGCTGGGTGAGGCAGGCCCCAGGCAAAGGCCTGGAGTGGGTGAGCGCTATTTCAAGCGGCGGCGGAAGCACCTACTACGCCGACAGCGTTAAGGGCAGGTTCACCATCAGCAGGGACAACAGCAAGAACACCCTGTACCTGCAGATGAACAGCCTGCGCGCCGAGGACACCGCCGTGTACTACTGCGCCAGGGCTAGCACATACTACTACGGCATGGACTACTGGGGCCAGGGCACCCTGGTGACCGTGAGCAGTGCCAGCACCAAAGGCCCGAGCGTGTTCCCACTGGCCCCAAGCAGCAAGAGCACTAGCGGCGGCACCGCCGCCCTGGGCTGTCTGGTCAAGGACTACTTTCCAGAGCCAGTGACCGTGAGCTGGAACAGCGGCGCCCTGACCAGCGGCGTGCATACCTTCCCAGCCGTGCTGCAGTCGTCCGGCCTGTACAGCCTGAGCAGCGTGGTGACCGTGCCAAGCTCCAGCCTGGGCACCCAGACCTACATCTGCAACGTGAATCACAAGCCATCCAACACAAAGGTGGACAAGAGGGTGGAGCCGAAGAGCTGCGACAAGACCCACACCTGCCCACCATGCCCAGCCCCAGAGCTGCTGGGCGGCCCAAGCGTGTTCCTGTTCCCACCAAAGCCAAAGGACACCCTGATGATCAGCAGGACCCCAGAGGTGACCTGCGTGGTGGTGGACGTGAGCCACGAAGACCCAGAGGTGAAGTTCAACTGGTACGTGGACGGCGTGGAGGTGCACAACGCCAAGACCAAGCCAAGGGAGGAGCAGTACAACAGCACCTACAGGGTGGTGAGCGTGCTTACCGTGCTGCACCAAGACTGGCTGAACGGCAAAGAGTACAAGTGCAAGGTGAGCAACAAGGCCCTGCCAGCCCCTATCGAGAAGACCATCTCTAAGGCCAAGGGACAGCCAAGGGAGCCACAAGTGTACACCCTGCCACCAAGCAGGGAGGAGATGACCAAGAACCAAGTGAGCCTGACCTGCCTGGTGAAGGGCTTTTACCCGAGCGACATCGCCGTGGAGTGGGAGAGCAACGGCCAGCCAGAGAATAACTACAAGACCACCCCACCAGTGCTGGACAGCGACGGGAGCTTCTTTCTGTACAGCAAGCTGACCGTGGACAAGTCTAGGTGGCAGCAGGGCAACGTGTTCAGCTGCAGCGTGATGCACGAGGCCCTGCATAACCACTACACCCAAAAGAGCCTGTCATTGAGCCCAGGCAAG</code></p>
+<h2>Solution 5: optimized_best_codon_pairs</h2>
+<h3>Scores</h3>
+<table>
+<tr><th>Metric</th><th>Value</th></tr>
+<tr><td>Total Score</td><td class='score'>0.8066</td></tr>
+<tr><td>CAI Score</td><td>0.9986</td></tr>
+<tr><td>GC Score</td><td>1.0000</td></tr>
+<tr><td>Pair Score</td><td>0.6041</td></tr>
+<tr><td>Structure Score</td><td>0.5000</td></tr>
+<tr><td>Motif Score</td><td>0.7758</td></tr>
+<tr><td>Cloning Score</td><td>1.0000</td></tr>
+</table>
+<h3>CQA Predictions</h3>
+<table>
+<tr><th>Attribute</th><th>Risk Level</th><th>Details</th></tr>
+<tr>
+<td>Glycosylation</td>
+<td class='high'>low</td>
+<td>{
+  "total_glycosylation_sites": 1,
+  "atypical_sites": [],
+  "atypical_site_count": 0,
+  "risk_level": "low"
+}</td>
+</tr>
+<tr>
+<td>Aggregation</td>
+<td class='medium'>medium</td>
+<td>{
+  "hydrophobic_regions": 0,
+  "unpaired_cysteines": 11,
+  "hydrophobicity_index": 0.34966592427616927,
+  "risk_factors": [
+    "unpaired_cysteines"
+  ],
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Charge_variants</td>
+<td class='medium'>medium</td>
+<td>{
+  "positive_charged": 52,
+  "negative_charged": 38,
+  "net_charge": 14,
+  "charge_density": 0.20044543429844097,
+  "risk_level": "medium"
+}</td>
+</tr>
+<tr>
+<td>Expression</td>
+<td class='high'>high</td>
+<td>{
+  "cai": 0.8997232269926523,
+  "predicted_expression": "high",
+  "tRNA_depletion_risk": false,
+  "max_codon_usage": 0.1091314031180401
+}</td>
+</tr>
+</table>
+<h3>Optimized Sequence</h3>
+<p><code>GAGGTGCAGCTGGTGGAGAGCGGCGGCGGCCTGGTGCAGCCAGGAGGCAGTCTGAGGCTGAGCTGCGCCGCCAGCGGCTTCACCTTCTCAAGCTACGCCATGAGCTGGGTGAGGCAAGCCCCAGGCAAGGGGCTGGAGTGGGTGAGCGCCATAAGCAGCGGCGGCGGCAGCACCTACTACGCCGACAGTGTGAAGGGCCGCTTCACCATCAGCAGGGACAACAGCAAGAACACCCTGTACCTGCAGATGAACAGCCTGCGCGCCGAGGACACCGCCGTGTACTACTGCGCGAGGGCCAGCACCTACTACTATGGCATGGACTACTGGGGCCAGGGCACCCTGGTGACCGTGAGCAGCGCCAGCACCAAGGGCCCATCAGTGTTCCCTCTGGCCCCAAGCAGCAAGAGCACCAGCGGCGGCACCGCCGCCCTGGGCTGCCTGGTGAAGGACTACTTTCCAGAGCCAGTGACCGTGTCTTGGAACAGCGGCGCCCTGACCAGCGGCGTGCACACGTTCCCAGCCGTGCTGCAGAGCAGCGGCCTGTACAGCCTGAGCAGCGTGGTGACCGTCCCAAGCAGCAGCCTGGGCACCCAGACCTACATCTGCAACGTGAACCACAAACCAAGCAACACCAAGGTCGACAAGAGGGTGGAGCCAAAGAGCTGCGACAAGACCCACACCTGCCCACCATGCCCAGCCCCAGAGCTGCTGGGTGGCCCAAGCGTGTTCCTGTTCCCACCAAAGCCAAAGGACACACTGATGATTAGCAGGACCCCAGAGGTGACCTGCGTGGTGGTGGACGTGAGCCACGAGGACCCAGAGGTGAAGTTCAACTGGTACGTGGACGGCGTGGAGGTGCACAACGCCAAGACCAAACCACGAGAGGAGCAGTACAACAGCACCTATCGAGTGGTGAGCGTACTGACCGTGCTGCACCAGGACTGGCTGAACGGCAAGGAGTACAAGTGCAAGGTGAGCAACAAGGCCCTGCCAGCCCCGATCGAGAAGACCATCAGCAAGGCCAAGGGCCAGCCAAGGGAACCACAGGTGTATACCCTGCCACCAAGCAGAGAGGAGATGACCAAGAATCAGGTGTCGCTGACCTGCCTGGTGAAGGGATTCTACCCAAGCGATATCGCCGTGGAGTGGGAGAGCAACGGCCAGCCAGAGAACAACTACAAGACCACCCCACCAGTGCTGGACAGTGACGGCAGCTTTTTCCTGTACAGCAAGCTGACTGTGGACAAGAGCAGGTGGCAGCAAGGCAACGTGTTCAGCTGTAGCGTGATGCACGAGGCGCTGCACAACCACTACACCCAGAAGTCGCTGAGCCTGAGCCCAGGCAAG</code></p>
+</body></html>
